@@ -35,11 +35,10 @@ renderer.setPixelRatio(window.devicePixelRatio);
 
 // Add OrbitControls
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
-controls.dampingFactor = 0.05;
-controls.enableZoom = true;
-controls.enablePan = true;
-
+controls.enableDamping = true ;
+controls.dampingFactor = 0.05 ;
+controls.enableZoom = true ;
+controls.enablePan = true ;
   box.position.y -=1 ; 
 
 
@@ -53,6 +52,12 @@ function animate() {
   
   renderer.render(scene, camera);
   controls.update();
+
 }
+
+window.addEventListener('resize',() => {
+  camera.aspect = window.innerWidth / window.innerHeight ; 
+  
+})
 
 animate();
